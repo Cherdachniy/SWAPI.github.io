@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik Mono One", sans-serif;
+}
+
+body {
+  background-image: url("images/background.jpg");
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  grid-column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.wrapper .orbits {
+  position: relative;
+  height: 1000px;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper .orbits .orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(75, 75, 75, 0.6);
+  animation: orbit linear infinite;
+  pointer-events: none;
+}
+.wrapper .orbits .orbit .planet {
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+.wrapper .orbits .orbit .planet:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px white);
+}
+.wrapper .orbits .orbit img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .orbits .orbit img.active {
+  filter: drop-shadow(0px 0px 5px white);
+}
+.wrapper .orbits .orbit .info {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 25%;
+  border: 1px solid yellow;
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.wrapper .planet-popup {
+  position: absolute;
+  background-color: black;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 10px;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  color: yellow;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.wrapper .planet-popup.active {
+  opacity: 1;
+}
+.wrapper .list {
+  width: 100%;
+  background-color: black;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  padding: 20px;
+}
+.wrapper .list .planetTitle {
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 10px;
+  cursor: pointer;
+  color: yellow;
+}
+.wrapper .list .planetTitle:hover {
+  transform: scale(1.1);
+}
+.wrapper .list .planetTitle.active {
+  transform: scale(1.1);
+}
+.wrapper .about {
+  width: 100%;
+  background-color: black;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  color: yellow;
+  padding: 20px;
+}
+.wrapper span {
+  color: aliceblue;
+}
+
+/*# sourceMappingURL=style.css.map */
