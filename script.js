@@ -72,7 +72,7 @@ fetch('https://swapi.dev/api/planets/').then((response) => {
             //Fill list of planet
             let about = document.querySelector('.about');
 
-            //Write text like a old computers
+            //Write text like old computers
             function writeText(el, text, delay) {
                 return new Promise((resolve) => {
                     let idx = 0;
